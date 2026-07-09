@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="/_sdk/telemetry_sdk.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priya Perfect Fit - Custom Tailoring</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Quicksand:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="app-wrapper w-full h-full">
+      <!-- Navigation -->
+      <nav class="sticky top-0 z-50 bg-white shadow-sm">
+        <div
+          class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+        >
+          <h1 class="serif-font text-2xl font-bold text-gray-900">
+            Priya Perfect Fit
+          </h1>
+          <div class="hidden md:flex gap-8">
+            <a
+              href="#booking"
+              class="text-gray-700 hover:text-gray-900 font-medium"
+              >Book Appointment</a
+            >
+            <a
+              href="#reviews"
+              class="text-gray-700 hover:text-gray-900 font-medium"
+              >Reviews</a
+            >
+            <a
+              href="#measure"
+              class="text-gray-700 hover:text-gray-900 font-medium"
+              >Get Measured</a
+            >
+          </div>
+          <button class="md:hidden p-2" id="mobileMenuBtn">
+            <i data-lucide="menu" class="w-6 h-6 text-gray-900"></i>
+          </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-50 border-t">
+          <div class="px-6 py-4 flex flex-col gap-4">
+            <a
+              href="#booking"
+              class="text-gray-700 hover:text-gray-900 font-medium"
+              >Book Appointment</a
+            >
+            <a
+              href="#reviews"
+              class="text-gray-700 hover:text-gray-900 font-medium"
+              >Reviews</a
+            >
+            <a
+              href="#measure"
+              class="text-gray-700 hover:text-gray-900 font-medium"
+              >Get Measured</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!-- Hero Section -->
+      <section class="hero-section py-16 md:py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <p
+            class="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wide"
+            id="brandTagline"
+          >
+            Tailored to You
+          </p>
+          <h2
+            class="serif-font text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            id="heroTitle"
+          >
+            Your Perfect Fit Awaits
+          </h2>
+          <p class="text-lg text-gray-700 max-w-2xl mx-auto" id="heroSubtitle">
+            Custom tailoring that celebrates your style and body. Book, measure,
+            and wear with confidence.
+          </p>
+        </div>
+      </section>
+      <!-- Services Section -->
+      <section id="booking" class="flex-1 py-16 md:py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+          <h3
+            class="section-title serif-font text-3xl md:text-4xl font-bold text-gray-900 mb-16 pb-4"
+          >
+            Our Services
+          </h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Booking Card -->
+            <div
+              id="bookingCard"
+              class="service-card bg-white rounded-lg p-8 shadow-md"
+            >
+              <div class="mb-6">
+                <i
+                  data-lucide="calendar"
+                  class="w-12 h-12 text-gray-600"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h4
+                class="serif-font text-2xl font-bold text-gray-900 mb-3"
+                id="bookingTitle"
+              >
+                Book Your Appointment
+              </h4>
+              <p class="text-gray-600 mb-6 leading-relaxed" id="bookingDesc">
+                Schedule a time that works for you. Our expert tailors are ready
+                to bring your vision to life with precision and care.
+              </p>
+              <a
+                href="#contact"
+                class="cta-button inline-flex justify-center items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 w-full"
+              >
+                Book Now
+              </a>
+            </div>
+            <!-- Reviews Card -->
+            <div class="service-card bg-white rounded-lg p-8 shadow-md">
+              <div class="mb-6">
+                <i data-lucide="star" class="w-12 h-12 text-gray-600"></i>
+              </div>
+              <h4
+                class="serif-font text-2xl font-bold text-gray-900 mb-3"
+                id="reviewsTitle"
+              >
+                Customer Reviews
+              </h4>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                See what our clients say about their experience. Read stories of
+                transformation and perfect-fit moments.
+              </p>
+              <button
+                onclick="scrollToSection('reviews')"
+                class="cta-button px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 w-full"
+              >
+                Read Reviews
+              </button>
+            </div>
+            <!-- Measurements Card -->
+            <div
+              id="measureCard"
+              class="service-card bg-white rounded-lg p-8 shadow-md"
+            >
+              <div class="mb-6">
+                <i data-lucide="ruler" class="w-12 h-12 text-gray-600"></i>
+              </div>
+              <h4
+                class="serif-font text-2xl font-bold text-gray-900 mb-3"
+                id="measureTitle"
+              >
+                Get Measured
+              </h4>
+              <p class="text-gray-600 mb-6 leading-relaxed" id="measureDesc">
+                Professional measurements ensure your garments fit flawlessly.
+                Let us take your measurements for the perfect custom fit.
+              </p>
+              <button
+                onclick="scrollToSection('measure')"
+                class="cta-button px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 w-full"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Reviews Section -->
+      <section id="reviews" class="py-16 md:py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+          <h3
+            class="section-title serif-font text-3xl md:text-4xl font-bold text-gray-900 mb-16 pb-4"
+          >
+            Client Testimonials
+          </h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="review-card bg-gray-50 rounded-lg p-8 shadow-sm">
+              <div class="flex gap-1 mb-4">
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+              </div>
+              <p class="text-gray-700 mb-4 italic leading-relaxed">
+                "The fit is absolutely perfect! Priya understood exactly what I
+                wanted and delivered beyond expectations. I'll never wear
+                off-the-rack again."
+              </p>
+              <p class="font-semibold text-gray-900">— Anjali M.</p>
+            </div>
+            <div class="review-card bg-gray-50 rounded-lg p-8 shadow-sm">
+              <div class="flex gap-1 mb-4">
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+              </div>
+              <p class="text-gray-700 mb-4 italic leading-relaxed">
+                "Professional, friendly, and so attentive to detail. My saree
+                fit like it was made just for me—because it was!"
+              </p>
+              <p class="font-semibold text-gray-900">— Priyanka D.</p>
+            </div>
+            <div class="review-card bg-gray-50 rounded-lg p-8 shadow-sm">
+              <div class="flex gap-1 mb-4">
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+                <i data-lucide="star" class="star w-5 h-5"></i>
+              </div>
+              <p class="text-gray-700 mb-4 italic leading-relaxed">
+                "Worth every penny. The attention to my measurements and style
+                preferences was impeccable. Highly recommend!"
+              </p>
+              <p class="font-semibold text-gray-900">— Meera S.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Measurements Section -->
+      <section id="measure" class="py-16 md:py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+          <h3
+            class="section-title serif-font text-3xl md:text-4xl font-bold text-gray-900 mb-12 pb-4"
+          >
+            How We Measure
+          </h3>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 mt-1">
+                <i data-lucide="check-circle" class="w-6 h-6 text-gray-900"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg text-gray-900 mb-2">
+                  Expert Assessment
+                </h4>
+                <p class="text-gray-600">
+                  Our experienced tailors take precise measurements and
+                  understand your body shape for the perfect fit.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 mt-1">
+                <i data-lucide="check-circle" class="w-6 h-6 text-gray-900"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg text-gray-900 mb-2">
+                  Style Consultation
+                </h4>
+                <p class="text-gray-600">
+                  We discuss your preferences, lifestyle, and style goals to
+                  create garments that truly reflect you.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 mt-1">
+                <i data-lucide="check-circle" class="w-6 h-6 text-gray-900"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg text-gray-900 mb-2">
+                  Custom Creation
+                </h4>
+                <p class="text-gray-600">
+                  Your garments are crafted with meticulous attention to every
+                  detail, ensuring a flawless fit every time.
+                </p>
+              </div>
+            </div>
+          </div>
+          <a
+            href="#contact"
+            class="cta-button mt-12 inline-flex justify-center items-center px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 text-lg w-full md:w-auto"
+          >
+            Schedule Your Measurement
+          </a>
+        </div>
+      </section>
+      <section id="contact" class="py-16 md:py-24 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+          <h3
+            class="section-title serif-font text-3xl md:text-4xl font-bold text-gray-900 mb-8 pb-4"
+          >
+            Ready for Your Perfect Fit?
+          </h3>
+          <div class="grid gap-10 md:grid-cols-[1fr_320px] items-center">
+            <div>
+              <p class="text-gray-700 mb-6 leading-relaxed">
+                Book a private consultation, request a quote, or ask about
+                fabrics. Our tailoring experts are here to help you look and
+                feel incredible.
+              </p>
+              <ul class="space-y-3 text-gray-600">
+                <li>
+                  <strong>Phone:</strong>
+                  <a
+                    href="tel:9538054184"
+                    class="text-gray-900 hover:text-gray-700"
+                    >9538054184</a
+                  >
+                </li>
+                <li>
+                  <strong>Email:</strong>
+                  <a
+                    href="mailto:priyashashikala14@gmail.com"
+                    class="text-gray-900 hover:text-gray-700"
+                    >priyashashikala14@gmail.com</a
+                  >
+                </li>
+                <li><strong>Studio:</strong> Bengaluru, India</li>
+              </ul>
+            </div>
+            <a
+              href="mailto:priyashashikala14@gmail.com"
+              class="cta-button inline-flex justify-center items-center px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 text-lg w-full"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12 px-6 mt-auto">
+        <div class="max-w-6xl mx-auto text-center">
+          <h5 class="serif-font text-xl font-bold mb-2">Priya Perfect Fit</h5>
+          <p class="text-gray-400 mb-6">
+            Custom tailoring for every occasion and body type.
+          </p>
+          <div class="flex justify-center gap-6 mb-8">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition"
+              aria-label="Instagram"
+            >
+              <i data-lucide="instagram" class="w-5 h-5" aria-hidden="true"></i>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition"
+              aria-label="Facebook"
+            >
+              <i data-lucide="facebook" class="w-5 h-5" aria-hidden="true"></i>
+            </a>
+            <a
+              href="mailto:priyashashikala14@gmail.com"
+              class="text-gray-400 hover:text-white transition"
+              aria-label="Email"
+            >
+              <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
+            </a>
+          </div>
+          <p class="text-gray-500 text-sm">
+            © 2026 Priya Perfect Fit. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
